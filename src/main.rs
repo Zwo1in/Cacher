@@ -13,8 +13,8 @@ fn main() {
 fn generate_workout(intensity: u32, random_number: u32) {
     let mut expensive_result = Cacher::new(|num| {
         println!("calculating slowly...");
-        thread::sleep(Duration::from_secs(2));
-        num
+        thread::sleep(Duration::from_secs(1));
+        *num
     });
 
     if intensity < 25 {
